@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ClienteApp.Views.TelaLogin">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Padding="2,2,0,2">
+                <Label Text="Loja Virtual ABC"  FontSize="Medium" FontAttributes="Bold" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
+            </StackLayout>
+            <StackLayout Padding="5,5,5,5">
+                <Label Text="Entre com e-mail e senha" FontSize="Small"/>
+                <Label Text="E-mail" FontSize="Micro"/>
+                <Entry x:Name="UsuarioEntry" Keyboard="Email" Placeholder="Digite seu e-mail" Text="{Binding autentica.Email}" FontSize="Small">
+                </Entry>
+                <Label Text="Senha" FontSize="Micro" />
+                <Entry x:Name="SenhaEntry" Placeholder="Digite sua senha" Text="{Binding autentica.Senha}" IsPassword="True" FontSize="Small">
+                </Entry>
+                <Label x:Name="messageLogin" FontSize="Micro"></Label>
+            </StackLayout>
+            <StackLayout Padding="2,2,2,2">
+                <Button Text="Entrar" Clicked="Button_Clicked_Entrar" BorderWidth="1" />
+                <Button Text="Ainda Nao Sou Cliente" Clicked="Button_Clicked_Novo" BorderWidth="1" />
+                <ActivityIndicator x:Name="acNovo" IsRunning="{Binding EmAtualizacao}" IsVisible="{Binding EmAtualizacao}" Color="Blue"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
